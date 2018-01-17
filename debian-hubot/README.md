@@ -1,0 +1,5 @@
+# debian-hubot
+基于debian制作的hubot
+比nodejs的镜像小了200m左右
+运行方式与hubot一致
+sources.list中自行修改合适的apt源
