@@ -18,4 +18,6 @@ RUN cd /tmp/libsodium-stable \
     && ldconfig \
     && rm -rf /tmp/libsodium-stable
 
-ENTRYPOINT ["sslocal"]
+ADD ss.sh /ss.sh
+
+ENTRYPOINT ["/ss.sh"]
