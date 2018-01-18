@@ -8,14 +8,14 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/* \
     && pip install shadowsocks
 
-ADD LATEST.tar.gz /mnt/
+ADD LATEST.tar.gz /tmp/
 
-WORKDIR /mnt/libsodium-stable
-
-RUN ./configure \
+RUN cd /tmp/libsodium-stable \
+    && ./configure \
     && make \
     && make install \
     && echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf \
-    && ldconfig
-WORKDIR /opt
+    && ldconfig \
+    && rm -rf /tmp/libsodium-stable
+
 ENTRYPOINT ["sslocal"]
