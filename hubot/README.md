@@ -8,5 +8,5 @@
 
 使用方法
 ```
-docker run -itd  --env HUBOT_BEARYCHAT_TOKENS="xxxxxxx" BOT_OWNER="xxxxxx" BOT_NAME="xxxx" vast0906/hubot bash
+docker run -d vast0906/hubot  --env HUBOT_BEARYCHAT_TOKENS="xxxxxxx" BOT_OWNER="xxxxxx" BOT_NAME="xxxx"  --restart always
 ```
